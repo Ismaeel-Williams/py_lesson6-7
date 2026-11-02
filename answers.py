@@ -1,5 +1,6 @@
+from math_operations import add, subtract, multiply, divide, modulo, power
 import random
-import math_operations
+
 #Question1
 fruits = ["apple", "watermelon", "avocado", "cucumber", "grapes", "orange"]
 for fruit in fruits:
@@ -21,20 +22,23 @@ for i in range(3):
     print(random.choice(Colors))
 
 #Question5
-input("Enter 1 for calculator or 2 to skip: ")
-while input == "1":
+choice = input("Enter 1 for calculator or 2 to skip: ").strip()
+while choice == "1":
     num1 = float(input("Enter first number: "))
     num2 = float(input("Enter second number: "))
     operation = input("Enter operation (+, -, *, /, %, **): ")
     if operation == "+":
-        print(math_operations.add(num1, num2))
+        print(add(num1, num2))
     elif operation == "-":
-        print(math_operations.subtract(num1, num2))
+        print(subtract(num1, num2))
     elif operation == "*":
-        print(math_operations.multiply(num1, num2))
+        print(multiply(num1, num2))
     elif operation == "/":
-        print(math_operations.divide(num1, num2))
+        print(divide(num1, num2))
     elif operation == "%":
-        print(math_operations.modulo(num1, num2))
+        print(modulo(num1, num2))
     elif operation == "**":
-        print(math_operations.power(num1, num2))
+        print(power(num1, num2))
+    else:
+        print("Invalid operation")
+    choice = input("Enter 1 to calculate again or 2 to skip: ").strip()
